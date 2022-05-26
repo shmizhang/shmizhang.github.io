@@ -1,0 +1,151 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[full]{textcomp}
+\usepackage{CJKutf8}
+% \usepackage[lf,osf]{ebgaramond}
+\usepackage[scaled,swashQ]{garamondx}
+
+\usepackage{enumitem}
+\usepackage[scale=.75]{geometry}
+\usepackage{url}
+\usepackage[dvipsnames]{xcolor}
+
+% package settings
+\usepackage[
+    hidelinks,
+    pdfnewwindow=true,
+    pdfauthor={Xovee Xu},
+    pdftitle={Curriculum Vitae of Xovee Xu},
+    pdfpagemode=UseThumbs,
+]{hyperref}
+
+\pagestyle{headings}
+\markright{\textbf{Xovee Xu}}
+
+\setlength\parindent{2em}
+
+% define cv section
+\newcommand{\cvsubsection}[1]{\subsection*{\hspace{1.6em}#1}}
+
+\thispagestyle{empty}
+
+\begin{document}
+
+% name
+\begin{center}
+    \vspace*{10pt}
+    \Huge{
+    \textbf{Xovee Xu}}
+\end{center}
+\vspace{10pt}
+
+\setlength{\parskip}{1pt}
+
+% contact information
+\noindent PhD Student in Computer Science \hfill \begin{CJK*}{UTF8}{gbsn}徐增\end{CJK*}
+
+\noindent School of Computer Science and Engineering \hfill \href{mailto:xovee@std.uestc.edu.cn}{\texttt{xovee@std.uestc.edu.cn}}
+
+\noindent University of Electronic Science and Technology of China\hfill \url{https://xovee.cn}
+
+\noindent Chengdu, Sichuan 611731, China
+
+
+\setlength{\parskip}{3pt}
+
+% education
+\section*{Education}
+\indent 
+
+\textbf{University of Electronic Science and Technology of China (UESTC)}
+
+\hspace{2em}Ph.D., Computer Science, 2021 to 2025 (expc.)
+
+\hspace{2em}M.S., Software Engineering, 2021
+
+\hspace{2em}B.S., Software Engineering, 2018
+
+% academic employment
+\section*{Academic Employment}
+\indent
+
+Research Assistant, University of Electronic Science and Technology of China, 2018 - present
+
+% distinction
+\input{distinction.tex}
+
+% area of interest
+\section*{Area of Interest}
+\indent
+
+Social network analysis
+
+Human-centered data mining
+
+Science of science
+
+% academic service
+\input{service.tex}
+
+% publication
+\input{article.tex}
+
+% invited talks and conference presentations
+\input{talk.tex}
+
+% project
+\input{project.tex}
+
+% teaching
+\section*{Teaching Experience}
+\indent
+
+% Teaching assistant: Run sections/labs & Grade problem sets, papers and exams
+% Teaching associate: Give lectures to the whole class (15-49 percent of the total) Have some influence on the content of the syllabus Run sections/labs & Grade problem sets, papers and exams
+% Lecturers: Give at least half the lectures Have some influence on the content of the syllabus Run sections/labs & Grade problem sets, papers and exams
+% Instructors: Give most or all of the lectures Have substantial influence on the content of the syllabus Run sections/labs & Grade problem sets, papers and exams
+
+\textbf{C Programming Language}\hfill Spring 2020
+
+\hspace{2em}Teaching Assistant, with Prof. Ting Zhong, at UESTC
+
+\textbf{Software Project Management}\hfill Summer 2019
+
+\hspace{2em}Teaching Assistant, with Prof. Gianmario Motta (University of Pavia), at UESTC
+
+
+% industrial 
+% \section*{Industrial Experience}
+% \indent
+
+% \textbf{PICC Property \& Casualty Co. Ltd.}, Information Tech. Dept., Chengdu Research Sub-center, Feb - May, 2018
+
+% \hspace{2em}Software Test Engineer Intern, in Chengdu, China
+
+% \textbf{Chengdu Gluxen Tech. Co. Ltd.}, Feb - Jul, 2017
+
+% \hspace{2em}Web Developer Intern, in Chengdu, China
+
+
+% language
+\section*{Language}
+\indent
+
+Native Chinese (Mandarin \& Northern Shaanxi Dialect)
+
+Fluent English
+
+
+% student
+% \section*{Student}
+% \indent
+
+% place holder
+
+
+\vfill
+
+\section*{\color{OliveGreen}\href{https://github.com/Xovee/latex-cv}{CV Template}\hfill\today}
+
+\end{document}

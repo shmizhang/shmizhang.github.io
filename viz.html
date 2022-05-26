@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Visualization of Xovee's Publications</title>
+    <meta charset='utf-8' author='xovee-xu' name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content="See interactive visualizations of Xovee's Publications here. ">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" media='print' onload="this.media='all'">
+
+    <!-- styles -->
+    <link rel='stylesheet' href='css/main.css'>
+    <script>
+        function menuIcon(x) {
+            x.classList.toggle('menu-icon-change');
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <header>
+        <div class='navibar'>
+            <a id='navi-mobile-home-item' onclick='menuIcon(this)'>
+                <div id='navi-mobile-icon'>
+                    <div class='menu-icon-container'>
+                        <div class='icon-bar-1'></div>
+                        <div class='icon-bar-2'></div>
+                        <div class='icon-bar-3'></div>
+                    </div>
+                </div>
+                <div id='navi-mobile-home-text'>Xovee</div>
+            </a>
+            <a id='navi-desktop-home-item' href='/'><div>Home</div></a>
+            <div id='navi-other-items'>
+                <a class='navi-item' href='./pubs.html'><div>Publication</div></a>
+                <a class='navi-item' href='./project.html'><div>Project</div></a>
+                <a class='navi-item' href='./contact.html'><div>Contact</div></a>
+            </div>
+        </div>
+    </header>
+
+<main>
+
+    <h1>Visualization of Xovee's Publications</h1>
+
+    
+    
+    <div>
+        Here are several interactive visualizations of Xovee's Publications:
+        <ul>
+            <li><a href='#scholar-time-viz'>Scholar Timeline Visualization</a>, designed by Xovee, created by <a href='https://bokeh.org' target='_blank'>bokeh</a>.</li>
+            <li><a href='#pub-rel-viz'>Publication Relation Visualization</a>, created by <a href='https://www.litmaps.co' target='_blank'>Litmaps</a>.</li>
+            <li>My co-authorship visualization, please see it at <a href='./canv.html' target='_blank'>this page</a>.</li>
+        </ul>
+    </div>
+
+    <h2>Trace of Xovee's Publications</h2>
+    <div class='card-item'>
+        <ul class='viz-trace'>
+            <li>infocom-20</li><li>globecom-20</li><li>csur-21</li><li>sigir-21</li><li>cikm-21</li><li>tkde-21</li><li>globecom-21</li><li>tist-22</li><li>kbs-22</li><li>aaai-22</li><li>tkde-22</li><li>icassp-22</li>
+        </ul>
+    </div>
+
+    <div id='stat-mobile'>Please view other visualizations within a larger screen (>=600px width and preferably >=920px).</div>
+
+    <div id='stat-page'>
+
+    <h2 id='scholar-time-viz'>Scholar Timeline Visualization</h2>
+
+    <p>You can drag and zoom horizontally on this diagram. The green pots are my publications, and you can hover on them to see detailed information. </p>
+
+    <div class='card-item timeline-container'>
+        <!-- scholar timeline -->
+        <div class="bk-root" id="6cd47c73-1230-49ce-aa64-1dcac27bc611" data-root-id="1004"></div>
+    </div>
+
+    <h2 id='pub-rel-viz'>Publication Relation Visualization</h2>
+    <div class='card-item'>
+        <iframe id='pub-rel-viz-frame' title='Publication Relation Visualization' src='https://app.litmaps.co/embed/9C111298-1C95-46F3-9BF3-0D2DF9041A6E?graphConfig=%7B%22scaleMode%22%3A%22citations%22%2C%22xAxisMode%22%3A%22compact%22%2C%22yAxisMode%22%3A%22compact%22%2C%22edgeMode%22%3A%22alwaysOn%22%2C%22labelContentMode%22%3A%22shortTitle%22%2C%22graphError%22%3Anull%7D'></iframe>
+    </div>
+
+    </div>
+</main>
+
+<script>
+    // navi-click
+    var naviHome = document.getElementById('navi-mobile-home-item')
+    var naviTags = document.getElementById('navi-other-items')
+
+    naviHome.addEventListener('click', function(){
+        if (naviTags.style.display === 'block') {
+            naviTags.style.display = 'none';
+            naviHome.setAttribute('href', '/');
+        } else {
+            naviTags.style.display = 'block';
+            naviHome.removeAttribute('href');
+        }
+    })
+
+    // trace colors and selection
+    const allListItems = document.querySelectorAll('.viz-trace li');
+    allListItems.forEach((element) => {
+        element.addEventListener('mouseover', function(){
+            this.style.color = 'white';
+            this.style.backgroundColor = '#222831';
+        })
+    });
+    allListItems.forEach((element) => {
+        element.addEventListener('mouseover', function(){
+            let venue_text = element.innerText.split('-')[0]; 
+            allListItems.forEach((element) => {
+                let current_text = element.innerText.split('-')[0];
+                if (current_text === venue_text) {
+                    element.style.color = 'white';
+                    element.style.backgroundColor = '#222831';
+                }
+            })
+        });
+        element.addEventListener('mouseout', function(){
+            allListItems.forEach((element) => {
+                element.style.color = 'black';
+                element.style.backgroundColor = '#eee';
+            })
+        });
+    })
+
+</script>
+
+<script async>
+    const mediaQuery = window.matchMedia('(min-width: 600px)');
+    
+    var bokehId = 'bokeh-js'
+
+    function LoadBokeh(id) {
+        if(document.getElementById(id) === null) {
+            var head = document.getElementsByTagName('head')[0];
+            var bokehJS = document.createElement('script');
+
+            bokehJS.setAttribute('defer', '');
+            bokehJS.src = 'https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js';
+            bokehJS.setAttribute('crossorigin', 'anonymous');
+            bokehJS.id = bokehId;
+            
+            head.appendChild(bokehJS);
+
+            bokehJS.onload = () => {
+                var timelineJS = document.createElement('script');
+                var screenWidth = document.documentElement.clientWidth;
+
+                timelineJS.type = 'text/javascript';
+                if(screenWidth >= 2000) {
+                    timelineJS.src = 'js/timeline-4k.js';
+                } else {
+                    timelineJS.src = 'js/timeline-1920.js';
+                }
+                
+                head.appendChild(timelineJS);
+            }
+        }
+    }
+
+    if (mediaQuery.matches) {
+        LoadBokeh(bokehId);
+    }
+
+    mediaQuery.addEventListener('change', () => {
+        LoadBokeh(bokehId);
+    })
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKRTC1TG5F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RKRTC1TG5F');
+</script>
+
+</body>
+
+</html>

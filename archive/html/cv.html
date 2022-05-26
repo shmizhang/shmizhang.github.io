@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKRTC1TG5F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RKRTC1TG5F');
+        
+        function menuIcon(x) {
+            x.classList.toggle('menu-icon-change');
+        }
+    </script>
+    
+    <title>CV of Xovee Xu</title>
+    <meta charset='utf-8' author='xovee-xu' name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content="See Xovee Xu's curriculum vitae (CV) here.">
+    <link rel='alternate' hreflang='en' href='https://xovee.cn'>
+    <link rel='canonical' href='https://xovee.cn'>
+    <link rel='stylesheet' href='../css/style.css'>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
+</head>
+
+<body class='cv-square'>
+
+<header id='web-header'>
+    <div id='header-content'>
+        <span id='header-home'><a href='/'>Home</a></span>
+        <a id='mobile-header-home'  onclick='menuIcon(this)'>
+            <div class='mobile-navi-home'>
+                <div class='menu-icon-container'>
+                    <div class='icon-bar-1'></div>
+                    <div class='icon-bar-2'></div>
+                    <div class='icon-bar-3'></div>
+                </div>
+                <span>Home</span>
+            </div>
+        </a>
+        <span id='mobile-tags'>
+        <span><a class='navi-item' href='../html/bio.html'>Bio</a></span>
+        <span><a class='navi-item' href='../html/research.html'>Research</a></span>
+        <span><a class='navi-item' href='../html/cv.html'>CV</a></span>
+        <span><a class='navi-item' href='../html/contact.html'>Contact</a></span>
+        </span>
+    </div>
+    </div>
+
+</header>
+
+<main id='cv-main'>
+
+    <h2>Long CV</h2>
+
+    <a href='../archive/cv/cv.pdf' target='_blank' style='margin-left: 2.4em;'>View PDF</a>
+
+    <h2>Short CV</h2>
+    
+    <ul class='short-cv'>
+        <li>I am Chinese 🇨🇳! 1996- </li>
+        <li>BS, UESTC, Software Engineering, 2018</li>
+        <li>MS, UESTC, Software Engineering, 2021</li>
+        <li>PhD Student, UESTC, Computer Science, 2021-</li>
+    </ul>
+
+</main>
+
+<script>
+    // navi-click
+    var naviHome = document.getElementById('mobile-header-home')
+    var dots = document.getElementById('dots')
+    var naviTags = document.getElementById('mobile-tags')
+
+    naviHome.addEventListener('click', function(){
+        if (naviTags.style.display === 'block') {
+            naviTags.style.display = 'none';
+            naviHome.setAttribute('href', '/');
+        } else {
+            naviTags.style.display = 'block';
+            naviHome.removeAttribute('href');
+        }
+    })
+</script>
+
+</body>
+
+</html>

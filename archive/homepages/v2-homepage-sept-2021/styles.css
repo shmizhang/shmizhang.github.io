@@ -1,0 +1,126 @@
+body {
+	background-color:#f5f5f0;
+	font-family: Palatino, Book Antiqua, Times New Roman, Arial;
+}
+
+.t-center {
+	text-align: center;
+}
+.t-small {
+	font-size: 140%;
+}
+.t-middle {
+	font-size: 180%;
+}
+.t-large {
+	font-size: 250%;
+}
+
+.section {
+	min-width: 400px;
+	max-width: 900px;
+	/* width: 100%; */
+	margin: auto;
+	padding: 0 .5em;
+}
+
+.smaller-section {
+	min-width: 400px;
+	max-width: 768px;
+	/* width: 100%; */
+	margin: auto;
+	padding: 0 .5em;
+}
+
+.hanging p {
+	text-indent: -2em;
+	margin-left: 4em;
+}
+
+.para-indent p, details {
+	margin-left: 2em;
+}
+
+p {
+	margin-top: .65em;
+	margin-bottom: .65em;
+}
+
+#bio-section p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.title {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	text-align: center;
+	font-size: xx-large;
+}
+
+.tab-margin {
+	margin-right: .5em;
+	margin-left: .5em;
+}
+
+#tabs {
+	clear: both;
+}
+
+#select-all {
+	display: inline;
+	float: right;
+}
+
+#tabs span {
+	cursor: pointer;
+}
+
+venue {
+	margin-right: 1.2em;
+	font-weight: bold;
+}
+
+timespan {
+	margin-right: .5em;
+}
+
+#news-title {
+	color: red;
+	font-size: 1.3em;
+	font-style: italic;
+}
+
+#article-title {
+	color:rgb(51, 102, 0);
+	font-size: 1.3em;
+	font-style: italic;
+}
+
+/* for news list */
+dt {
+	float: left;
+	width: 7em;
+	margin-left: 1em;
+	margin-bottom: 4px;
+	clear: both;
+}
+
+dt:before {
+	content: "\00a0\2022\00a0\00a0\00a0";
+}
+
+dd {
+	margin-left: 8em;
+	margin-bottom: 4px;
+}
+
+#sub-pages a {
+	margin-right: 1.8em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#my-canv-input label {
+	margin-right: 1em;
+}

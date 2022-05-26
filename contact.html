@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Contact Information of Xovee Xu</title>
+    <meta charset='utf-8' author='xovee-xu' name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content="Get in touch with Xovee.">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" media='print' onload="this.media='all'">
+
+    <!-- styles -->
+    <link rel='stylesheet' href='css/main.css'>
+    
+    <script>
+        function menuIcon(x) {
+            x.classList.toggle('menu-icon-change');
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <header>
+        <div class='navibar'>
+            <a id='navi-mobile-home-item' onclick='menuIcon(this)'>
+                <div id='navi-mobile-icon'>
+                    <div class='menu-icon-container'>
+                        <div class='icon-bar-1'></div>
+                        <div class='icon-bar-2'></div>
+                        <div class='icon-bar-3'></div>
+                    </div>
+                </div>
+                <div id='navi-mobile-home-text'>Xovee</div>
+            </a>
+            <a id='navi-desktop-home-item' href='/'><div>Home</div></a>
+            <div id='navi-other-items'>
+                <a class='navi-item' href='./pubs.html'><div>Publication</div></a>
+                <a class='navi-item' href='./project.html'><div>Project</div></a>
+                <a class='navi-item' href='./contact.html'><div>Contact</div></a>
+            </div>
+        </div>
+    </header>
+
+<main>
+
+    <h1>Contact</h1>
+
+    <div>
+        <a href='https://en.uestc.edu.cn/' target='_blank'><img src='./img/logo-uestc.png' alt='UESTC Logo' class='uestc-logo'></a>
+
+        <b style='font-size: 1.2em;'>Xovee Xu</b><br><span>(he/him)</span><br>
+        Chinese name: 徐增, which means <em>slowly increasing</em><br>
+        PhD Student in Computer Science<br>
+        University of Electronic Science and Technology of China (<a href='https://en.uestc.edu.cn/' target='_blank'>UESTC</a>)<br><br>
+
+        <b>Email</b>: <span style='font-family: monospace;'><span style='margin-right: .3em; margin-left: .3em;'>first-name</span> @ieee.org or @std.uestc.edu.cn</span><br><br>
+
+        <div id='lab-address-container' onclick='toggleAddress(this)' title='Click to show Chinese/English version.'>
+            <b>Lab address</b><br>
+            <div id='lab-address'>Room 433, Main Building<br>4 Section 2, N Jianshe Rd<br>Chengdu, Sichuan 610054, China<br><br></div>
+            <div id='zh-lab-address'>6 1 0 0 5 4<br>中国&nbsp;&nbsp;四川省&nbsp;&nbsp;成都市&nbsp;&nbsp;成华区&nbsp;&nbsp;建设北路二段4号<br>电子科技大学（沙河校区）&nbsp;&nbsp;主楼中433<br><br></div>
+        </div>
+
+        <b>Affiliations</b><br>
+        <a href='https://www.en.scse.uestc.edu.cn/' target='_blank'>School of Computer Science and Engineering</a>, UESTC<br>
+        Fan Zhou Lab, UESTC<br>
+        <a href='https://vl-group.github.io/' target='_blank'>Vision and Language Group</a>, UESTC<br>
+
+    </div>
+    
+    <br><br>
+    <img class='affi-photo' src='./img/uestc-main-building.webp' alt='UESTC Main Building' >
+    <iframe class='affi-map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231463.855898734!2d103.97370822318396!3d30.678239879083645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x596fa6e3dd134563!2sUniversity%20of%20Electronic%20Science%20and%20Technology%20of%20China%20Graduate%20School!5e0!3m2!1sen!2s!4v1649235225514!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</main>
+
+<script>
+    // navi-click
+    var naviHome = document.getElementById('navi-mobile-home-item')
+    var naviTags = document.getElementById('navi-other-items')
+
+    naviHome.addEventListener('click', function(){
+        if (naviTags.style.display === 'block') {
+            naviTags.style.display = 'none';
+            naviHome.setAttribute('href', '/');
+        } else {
+            naviTags.style.display = 'block';
+            naviHome.removeAttribute('href');
+        }
+    })
+    
+    // toggle address
+    var addressContainer = document.getElementById('lab-address-container')
+    var englishAddress = document.getElementById('lab-address')
+    var chineseAddress = document.getElementById('zh-lab-address')
+
+    addressContainer.addEventListener('click', function(){
+        if (englishAddress.style.display === 'block') {
+            englishAddress.style.display = 'none';
+            chineseAddress.style.display = 'block';
+        } else {
+            englishAddress.style.display = 'block';
+            chineseAddress.style.display = 'none';
+        }
+    })
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKRTC1TG5F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RKRTC1TG5F');
+</script>
+
+</body>
+
+</html>

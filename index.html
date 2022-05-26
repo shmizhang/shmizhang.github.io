@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Homepage of Xovee Xu</title>
+    <meta charset='utf-8' author='xovee-xu' name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content="PhD student in computer science at UESTC, Chengdu, China. See Xovee's research, publications, projects and more.">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <!-- og -->
+    <meta property="og:title" content="Homepage of Xovee Xu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xovee.cn/">
+    <meta property="og:description" content="See Xovee's research, publications, projects and more.">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" media='print' onload="this.media='all'">
+
+    <!-- styles -->
+    <link rel='stylesheet' href='css/main.css'>
+    <script>
+        function menuIcon(x) {
+            x.classList.toggle('menu-icon-change');
+        }
+    </script>
+
+</head>
+
+<body>
+
+<header>
+    <div class='navibar'>
+        <a id='navi-mobile-home-item' onclick='menuIcon(this)'>
+            <div id='navi-mobile-icon'>
+                <div class='menu-icon-container'>
+                    <div class='icon-bar-1'></div>
+                    <div class='icon-bar-2'></div>
+                    <div class='icon-bar-3'></div>
+                </div>
+            </div>
+            <div id='navi-mobile-home-text'>Xovee</div>
+        </a>
+        <a id='navi-desktop-home-item' href='/'><div>Home</div></a>
+        <div id='navi-other-items'>
+            <a class='navi-item' href='./pubs.html'><div>Publication</div></a>
+            <a class='navi-item' href='./project.html'><div>Project</div></a>
+            <a class='navi-item' href='./contact.html'><div>Contact</div></a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <div class=''>
+        <div class='avatar-container'>
+            <picture>
+                <source type='image/webp' media='(max-width:629px)' srcset='img/a2-2320.webp 2320w, img/a2-1200.webp 1200w, img/a2-800.webp 800w, img/a2-400.webp 400w' sizes='80vw'>
+                <source type='image/webp' srcset='img/a2-2320@d.webp 2320w, img/a2-1200@d.webp 1200w, img/a2-800@d.webp 800w, img/a2-400@d.webp 400w' sizes='30vw'>
+                <source type='image/jpeg' media='(max-width:629px)' srcset='img/a2-2320.jpg 2320w'>
+                <img class='avatar' src='img/a2-2320.jpg' alt='avatar'>
+            </picture>
+        </div>
+
+        <div class='home-content'>
+            <h1 id='home-name'>Xovee Xu</h1>
+            <div id='home-intro'>
+
+                <div id='home-position'>PhD student in computer science</div>
+        
+                <p>>&ThickSpace; Supervised by Profs. <a href='https://scholar.google.com/citations?user=Ihj2Rw8AAAAJ&hl=en&authuser=1&oi=sra', target='_blank'>Fan Zhou</a> and <a href='https://scholar.google.com/citations?user=F5Zy9V4AAAAJ&hl=en&authuser=1&oi=ao' target='_blank'>Jingkuan Song</a></p>
+        
+                <p>>&ThickSpace; University of Electronic Science and Technology of China (<a href='https://en.uestc.edu.cn/' target='_blank'>UESTC</a>), Chengdu, China</p>
+        
+                <p>>&ThickSpace; Researching on how information is diffused in social networks, how can we realize AI technologies for social good, and bridge social and computer science.</p>
+        
+                <div id='links'>
+                    <a href='https://scholar.google.com/citations?user=ra0qyRQAAAAJ&hl=en&oi=ao' target='_blank'>Google Scholar</a> 
+                    <a href='./archive/cv/cv.pdf' target='_blank'>CV.pdf</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scholar timeline -->
+    <div id='home-scholar-timeline'>
+        <div class="bk-root" id="6cd47c73-1230-49ce-aa64-1dcac27bc611" data-root-id="1004"></div>
+    </div>
+
+</main>
+
+<footer>
+    <br>
+    &copy; 2018-<span id='current-year'></span> Xovee Xu 徐增
+    <span class='footnote-date'>
+        Last update: May 17, 2022
+    </span>
+</footer>
+
+<script>
+    // copyright year and update date
+    curYear = (new Date).getFullYear();
+    document.getElementById('current-year').innerHTML = curYear;
+
+    // navi-click
+    var naviHome = document.getElementById('navi-mobile-home-item')
+    var naviTags = document.getElementById('navi-other-items')
+
+    naviHome.addEventListener('click', function(){
+        if (naviTags.style.display === 'block') {
+            naviTags.style.display = 'none';
+            naviHome.setAttribute('href', '/');
+        } else {
+            naviTags.style.display = 'block';
+            naviHome.removeAttribute('href');
+        }
+    })
+
+</script>
+
+<!-- load bokeh only when width >= 600 -->
+<script async>
+    const mediaQuery = window.matchMedia('(min-width: 600px)');
+    
+    var bokehId = 'bokeh-js'
+
+    function LoadBokeh(id) {
+        if(document.getElementById(id) === null) {
+            var head = document.getElementsByTagName('head')[0];
+            var bokehJS = document.createElement('script');
+
+            bokehJS.setAttribute('defer', '');
+            bokehJS.src = 'https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js';
+            bokehJS.setAttribute('crossorigin', 'anonymous');
+            bokehJS.id = bokehId;
+            
+            head.appendChild(bokehJS);
+
+            bokehJS.onload = () => {
+                var timelineJS = document.createElement('script');
+                var screenWidth = document.documentElement.clientWidth;
+
+                timelineJS.type = 'text/javascript';
+                if(screenWidth >= 2000) {
+                    timelineJS.src = 'js/timeline-4k.js';
+                } else {
+                    timelineJS.src = 'js/timeline-1920.js';
+                }
+                
+                head.appendChild(timelineJS);
+            }
+        }
+    }
+
+    if (mediaQuery.matches) {
+        LoadBokeh(bokehId);
+    }
+
+    mediaQuery.addEventListener('change', () => {
+        LoadBokeh(bokehId);
+    })
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKRTC1TG5F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RKRTC1TG5F');
+</script>
+
+</body>
+
+</html>
